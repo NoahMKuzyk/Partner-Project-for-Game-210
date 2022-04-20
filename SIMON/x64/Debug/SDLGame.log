@@ -1,0 +1,26 @@
+﻿  main.cpp
+C:\Users\Seaki\source\repos\NoahMKuzyk\Partner-Project-for-Game-210\SIMON\Source\main.cpp(44,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Seaki\source\repos\NoahMKuzyk\Partner-Project-for-Game-210\SIMON\Source\main.cpp(89,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Seaki\source\repos\NoahMKuzyk\Partner-Project-for-Game-210\SIMON\Source\main.cpp(89,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Graphics.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "public: static bool __cdecl Graphics::Init(void)" (?Init@Graphics@@SA_NXZ)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "public: static bool __cdecl Graphics::Init(void)" (?Init@Graphics@@SA_NXZ)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "public: static void __cdecl Graphics::SetColor(struct Colour)" (?SetColor@Graphics@@SAXUColour@@@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "public: static void __cdecl Graphics::StartRender(void)" (?StartRender@Graphics@@SAXXZ)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderDrawLine referenced in function "public: static void __cdecl Graphics::DrawLine(struct Transform2D,struct Vec2D)" (?DrawLine@Graphics@@SAXUTransform2D@@UVec2D@@@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderDrawRect referenced in function "public: static void __cdecl Graphics::DrawRect(struct Transform2D,struct Vec2D,bool)" (?DrawRect@Graphics@@SAXUTransform2D@@UVec2D@@_N@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderFillRect referenced in function "public: static void __cdecl Graphics::DrawRect(struct Transform2D,struct Vec2D,bool)" (?DrawRect@Graphics@@SAXUTransform2D@@UVec2D@@_N@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: static void __cdecl Graphics::EndRender(void)" (?EndRender@Graphics@@SAXXZ)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+Graphics.obj : error LNK2019: unresolved external symbol SDL_Delay referenced in function "public: static void __cdecl Graphics::EndRender(void)" (?EndRender@Graphics@@SAXXZ)
+main.obj : error LNK2001: unresolved external symbol SDL_Delay
+Graphics.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "public: static bool __cdecl Graphics::Init(void)" (?Init@Graphics@@SA_NXZ)
+Graphics.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+Graphics.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: static void __cdecl Graphics::DrawText(char const *,float,float,int,int)" (?DrawText@Graphics@@SAXPEBDMMHH@Z)
+EventHandler.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: static bool __cdecl EventHandler::Update(void)" (?Update@EventHandler@@SA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function main
+SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Seaki\Source\Repos\NoahMKuzyk\Partner-Project-for-Game-210\x64\Debug\SIMON.exe : fatal error LNK1120: 18 unresolved externals

@@ -5,8 +5,45 @@
 #include "Objects/ColourBlock.h"
 #include "../Graphics.h"
 
+#include <iostream>
+#include <fstream>
+#include <stdio.h>
+using namespace std;
+
 // GameState
 bool GameRunning = true;
+
+//The main player data struct for saving and loading.
+struct Player {
+	int daysSurvived;
+	int resMetal;
+	int resPlastic;
+	int resPower;
+}playerData;
+
+//Initializes the player struct to its default values. 
+void InitializePlayerData() {
+	playerData.daysSurvived = 0;
+	playerData.resMetal = 235;
+	playerData.resPlastic = 100;
+	playerData.resPower = 100;
+}
+
+//Saves the current Player Data to a file
+void SavePlayerData() {
+	ofstream savedData("PlayerSave.txt");
+	savedData << playerData.daysSurvived << ' ' << playerData.resMetal << ' ' << playerData.resPlastic << ' ' << playerData.resPower;
+	savedData.close();
+}
+
+//Loads the Player Data from the file and writes it to the current Player struct
+void LoadPlayerData() {
+	Player playerData;
+	ifstream savedData("PlayerSave.txt");
+	savedData >> playerData.daysSurvived >> playerData.resMetal >> playerData.resPlastic >> playerData.resPower;
+	savedData.close();
+}
+
 
 // argc and argv here are command line parameters passed to the program when running the program. 
 // we won't actually use them but our 2D Graphics Library requires the main setup like this.
@@ -15,6 +52,10 @@ bool GameRunning = true;
 int main( int argc, char *argv[] )
 {
 	srand(time(NULL));
+
+	Player playerData;
+	InitializePlayerData();
+	SavePlayerData();
 
 	if (!Graphics::Init())
 	{
