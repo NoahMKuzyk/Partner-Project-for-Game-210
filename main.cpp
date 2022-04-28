@@ -166,6 +166,17 @@ void ButtonMasher() {
 		SDL_Delay(100); 
 
 
+
+
+		//Process the score into a string and then a character
+		//string dDisplayScore = to_string(buttonClicks);
+		//const char* displayChar = dDisplayScore.c_str();
+		//Display the score
+		//Graphics::DrawText("Score:", 0, 0, 100, 50);
+		//Graphics::DrawText(displayChar, 100, 0, 50, 50);
+
+
+
 		//Changes Sprite To Unpushed Button
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, background_texture, NULL, NULL);
