@@ -1,4 +1,5 @@
 #pragma once
+#include "../Source/Objects/ObjData.h"
 #include "SDL.h"
 
 enum GameEvents

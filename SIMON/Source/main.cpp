@@ -15,7 +15,7 @@ bool GameRunning = true;
 
 //The main player data struct for saving and loading.
 struct Player {
-	int daysSurvived;
+	int score;
 	int resMetal;
 	int resPlastic;
 	int resPower;
@@ -23,7 +23,7 @@ struct Player {
 
 //Initializes the player struct to its default values. 
 void InitializePlayerData() {
-	playerData.daysSurvived = 0;
+	playerData.score = 0;
 	playerData.resMetal = 235;
 	playerData.resPlastic = 100;
 	playerData.resPower = 100;
@@ -32,7 +32,7 @@ void InitializePlayerData() {
 //Saves the current Player Data to a file
 void SavePlayerData() {
 	ofstream savedData("PlayerSave.txt");
-	savedData << playerData.daysSurvived << ' ' << playerData.resMetal << ' ' << playerData.resPlastic << ' ' << playerData.resPower;
+	savedData << playerData.score << ' ' << playerData.resMetal << ' ' << playerData.resPlastic << ' ' << playerData.resPower;
 	savedData.close();
 }
 
@@ -40,10 +40,9 @@ void SavePlayerData() {
 void LoadPlayerData() {
 	Player playerData;
 	ifstream savedData("PlayerSave.txt");
-	savedData >> playerData.daysSurvived >> playerData.resMetal >> playerData.resPlastic >> playerData.resPower;
+	savedData >> playerData.score >> playerData.resMetal >> playerData.resPlastic >> playerData.resPower;
 	savedData.close();
 }
-
 
 // argc and argv here are command line parameters passed to the program when running the program. 
 // we won't actually use them but our 2D Graphics Library requires the main setup like this.
@@ -53,8 +52,13 @@ int main( int argc, char *argv[] )
 {
 	srand(time(NULL));
 
+	//Set the values of the player data
+	//function that does it above doesn't work, dunno why, but manually setting it works here
 	Player playerData;
-	InitializePlayerData();
+	playerData.score = 0;
+	playerData.resMetal = 235;
+	playerData.resPlastic = 100;
+	playerData.resPower = 100;
 	SavePlayerData();
 
 	if (!Graphics::Init())
@@ -125,9 +129,17 @@ int main( int argc, char *argv[] )
 					ColourBlock[x][y].Draw();
 				}
 
-				Graphics::DrawText("Example Text", 0,0, 100, 50);
 			}
 		}
+
+
+		//Process the score into a string and then a character
+		playerData.score = playerData.score + 1;
+		string dDisplayScore = to_string(playerData.score);
+		const char* displayChar = dDisplayScore.c_str();
+		//Display the score
+		Graphics::DrawText("Score:", 0, 0, 100, 50);
+		Graphics::DrawText(displayChar, 100, 0, 50, 50);
 
 		// apply the changes to the screen 
 		Graphics::EndRender();
